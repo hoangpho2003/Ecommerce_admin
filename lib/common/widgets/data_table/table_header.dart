@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 class TTableHeader extends StatelessWidget {
-  const TTableHeader({super.key, this.onPressed, required this.buttonText, this.searchController, this.searchOnChanged});
+  const TTableHeader({super.key, this.onPressed, this.buttonText = 'Add', this.searchController, this.searchOnChanged, this.showLeftWidget = true});
 
   final Function()? onPressed;
   final String buttonText;
   final TextEditingController? searchController;
   final Function(String)? searchOnChanged;
+  final bool showLeftWidget;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class TTableHeader extends StatelessWidget {
       children: [
         Expanded(
           flex: !TDeviceUtils.isDesktopScreen(context) ? 3 : 1,
-          child: TDeviceUtils.isDesktopScreen(context)
+          child: showLeftWidget
           // Nếu là desktop, giữ nguyên code ban đầu
               ? Row(
             children: [
@@ -30,10 +31,7 @@ class TTableHeader extends StatelessWidget {
             ],
           )
           // Nếu là mobile, thay đổi code thành một ElevatedButton không có SizedBox
-              : ElevatedButton(
-            onPressed: onPressed,
-            child: Text(buttonText),
-          ),
+              : const SizedBox.shrink(),
         ),
         Expanded(
           flex: !TDeviceUtils.isDesktopScreen(context) ? 2 : 1,

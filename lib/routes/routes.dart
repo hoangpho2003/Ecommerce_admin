@@ -20,6 +20,7 @@ class HptRoutes {
   static const createCustomer = '/createCustomer';
   static const customerDetails = '/customerDetails';
   static const orders = '/orders';
+  static const ordersDetails = '/ordersDetails';
   static const coupons = '/coupons';
   static const settings = '/settings';
   static const logout = '/login';

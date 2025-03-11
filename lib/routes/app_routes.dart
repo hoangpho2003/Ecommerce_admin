@@ -14,6 +14,8 @@ import '../features/shop/screens/brand/edit_brands/edit_brand.dart';
 import '../features/shop/screens/category/all_categories/categories.dart';
 import '../features/shop/screens/category/create_category/create_category.dart';
 import '../features/shop/screens/category/edit_category/edit_category.dart';
+import '../features/shop/screens/customer/all_customers/customers.dart';
+import '../features/shop/screens/customer/customer_detail/customer_detail.dart';
 import '../features/shop/screens/dashboard/dashboard.dart';
 import '../features/shop/screens/product/all_product/product.dart';
 import '../features/shop/screens/product/create_product/create_product.dart';
@@ -41,5 +43,8 @@ class HptAppRoute {
     GetPage(name: HptRoutes.products, page: () => const ProductScreen(), middlewares: [HptRouteMiddleware()]),
     GetPage(name: HptRoutes.createProduct, page: () => const CreateProductScreen(), middlewares: [HptRouteMiddleware()]),
     // GetPage(name: HptRoutes.editProduct, page: () => const EditProductScreen(), middlewares: [HptRouteMiddleware()]),
+
+    GetPage(name: HptRoutes.customers, page: () => const CustomerScreen(), middlewares: [HptRouteMiddleware()]),
+    GetPage(name: HptRoutes.customerDetails, page: () => const CustomerDetailScreen(), middlewares: [HptRouteMiddleware()]),
   ];
 }
